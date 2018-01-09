@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.flexbox{
+			width: 300px;
+			height: 300px;
+			border: 2px solid #000;
+			display: flex;
+			position: relative;
+		}
+		.flexbox::before,.flexbox::after{
+			content:"";
+			display: block;
+			position: absolute;
+		}
+		.flexbox::before{
+			/* 橫 */
+			width: 100%;
+			height: 2px;
+			background-color: red;
+			top: 50%;
+		}
+		.flexbox::after{
+			/* 直 */
+			height: 100%;
+			width: 2px;
+			background-color: blue;
+			left: 50%;
+		}
+		.flexbox .box{
+			width: 50px;
+			height: 50px;
+			border: 2px solid #000;
+			/*background-color: #eee;*/
+		}
+		.flexbox1{
+			display: flex;
+			justify-content: space-evenly; 
+			/* flex-start/flex-end/center/space-between/space-around/space-evenly */
+			align-items: flex-end; /* flex-start/center/flex-end */
+			flex-direction: column /* row/row-reverse/column/column-reverse */
+		}
+		.flexbox2{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.flexbox3{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+		.flexbox3 .left{
+			flex:400px;
+			height: 100%;
+			/*flex-grow: 0; 不能膨脹，不能比400大*/
+			/*flex-shrink: 0; 不能縮小，不能比400小*/
+		}
+		.flexbox3 .mid{
+			flex:300px;
+			height: 100%;
+		}
+		.flexbox3 .right{
+			flex:200px;
+			height: 100%;
+		}
+		.flexbox2 .left{
+			flex: 150px;
+			height: 100%;
+		}
+		.flexbox2 .mid{
+			flex: 6;
+			height: 100%;
+		}
+		.flexbox2 .right{
+			flex: 2;
+			height: 100%;
+		}
+		.left{
+			background-color: #2D4059;
+		}
+		.mid{
+			background-color: #EA5455;
+		}
+		.right{
+			background-color: #F07B3F;
+		}
+	</style>
+</head>
+<body>
+	<div class="flexbox flexbox1">
+		<div class="box">1</div>
+		<div class="box">2</div>
+		<div class="box">3</div>
+		<div class="box">4</div>
+		<div class="box">5</div>
+	</div>
+	<div class="flexbox flexbox2">
+		<div class="left box">1</div>
+		<div class="mid box">2</div>
+		<div class="right box">3</div>
+	</div>
+	<div class="flexbox flexbox3">
+		<div class="left box">1</div>
+		<div class="mid box">2</div>
+		<div class="right box">3</div>
+	</div>
+</body>
+</html>
